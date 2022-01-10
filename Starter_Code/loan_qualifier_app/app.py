@@ -12,6 +12,8 @@ import fire
 import questionary
 from pathlib import Path
 
+from questionary.constants import YES
+
 from qualifier.utils.fileio import load_csv
 
 from qualifier.utils.calculators import (
@@ -111,12 +113,20 @@ def save_qualifying_loans(qualifying_loans):
     # @TODO: Complete the usability dialog for savings the CSV Files.
     # YOUR CODE HERE!
     header = ["Lender","Max Loan Amount","Max LTV","Max DTI","Min Credit Score","Interest Rate"]
-    export_path = Path("filtered_loans.csv")
-    with open(export_path, "w") as csvfile:
-        csvwriter = csv.writer(csvfile, delimiter = ",")
-        csvwriter.writerow(header)
-        for row in qualifying_loans:
-            csvwriter.writerow(row)
+
+    answer = questionary.text("Would you like to export the filtered list(please respond with 'Yes' or 'No'):").ask()
+
+    if answer == "Yes":
+        export_path = questionary.text("You have chosen to save the filtered list, please enter a destination where you want the list exported:").ask()
+        with open(export_path, "w") as csvfile:
+            csvwriter = csv.writer(csvfile, delimiter = ",")
+            csvwriter.writerow(header)
+            for row in qualifying_loans:
+                csvwriter.writerow(row)
+    else:
+        print("You have chosen not to export the list, thank you for your patronage!")
+        sys.exit
+
 
 def run():
     """The main function for running the script."""
