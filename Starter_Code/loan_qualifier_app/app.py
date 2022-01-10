@@ -113,10 +113,10 @@ def save_qualifying_loans(qualifying_loans):
     header = ["Lender","Max Loan Amount","Max LTV","Max DTI","Min Credit Score","Interest Rate"]
     export_path = Path("filtered_loans.csv")
     with open(export_path, "w") as csvfile:
-        csvwriter = csv.writer(export_path, delimiter = ",")
+        csvwriter = csv.writer(csvfile, delimiter = ",")
         csvwriter.writerow(header)
         for row in qualifying_loans:
-            csvwriter.writerow(row.values())
+            csvwriter.writerow(row)
 
 def run():
     """The main function for running the script."""
