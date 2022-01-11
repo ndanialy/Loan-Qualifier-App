@@ -112,10 +112,16 @@ def save_qualifying_loans(qualifying_loans):
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
     # YOUR CODE HERE!
+
+    #Creating a header for the output file.
     header = ["Lender","Max Loan Amount","Max LTV","Max DTI","Min Credit Score","Interest Rate"]
 
+    #Ask the user whether they would like to save the filtered list as a separate csv file.
     answer = questionary.text("Would you like to export the filtered list(please respond with 'Yes' or 'No'):").ask()
 
+    #Different outcomes depending on whether they reply with "Yes" or "No": 
+
+    #If they reply with "Yes", asks the user to choose a location to store the filtered data as a csv
     if answer == "Yes":
         export_path = questionary.text("You have chosen to save the filtered list, please enter a destination where you want the list exported:").ask()
         with open(export_path, "w") as csvfile:
@@ -123,6 +129,8 @@ def save_qualifying_loans(qualifying_loans):
             csvwriter.writerow(header)
             for row in qualifying_loans:
                 csvwriter.writerow(row)
+
+    #If they reply with "No" prints a message saying they have chosen not to export the file, thanks them, and exits the app.
     else:
         print("You have chosen not to export the list, thank you for your patronage!")
         sys.exit
