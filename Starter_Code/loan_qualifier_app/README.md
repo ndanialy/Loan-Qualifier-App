@@ -20,7 +20,7 @@ This project uses Python 3 in addition to the following libraries and add ons:
 
 ## Installation Guide
 
-Please perform the following commands before running the app:
+Please run the following commands in your terminal before running the app:
 ```
 pip install fire
 pip install questionary
@@ -41,6 +41,8 @@ After running the app through a terminal such as Gitbash, you will go through th
 After this you will be told the number of loans you qualify for and be asked if you would like to save the filtered list as a csv file.
 * If you choose "No", the app terminates.
 * If you choose "Yes", you will be asked to provide a directory for the location you want the list saved.
+
+![Image of app running in terminal](Loan-Qualifier-App/Images/Loan_Qualifier_SC.png)
 
 ---
 

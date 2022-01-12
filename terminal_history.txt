@@ -1,0 +1,6 @@
+    1  cd Documents/
+    2  ls
+    3  cd GitHub/
+    4  cd Loan-Qualifier-App/
+    5  ls
+    6  history 50 > terminal_history.txt
