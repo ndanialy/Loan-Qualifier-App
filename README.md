@@ -40,9 +40,14 @@ After running the app through a terminal such as Gitbash, you will go through th
 
 After this you will be told the number of loans you qualify for and be asked if you would like to save the filtered list as a csv file.
 * If you choose "No", the app terminates.
+
+![Image of app running in terminal "No" option](https://user-images.githubusercontent.com/96391748/149060732-03ceb66c-4174-4ee9-9d6a-c74cc444a6b1.png)
+
 * If you choose "Yes", you will be asked to provide a directory for the location you want the list saved.
 
-![Image of app running in terminal](https://user-images.githubusercontent.com/96391748/149060732-03ceb66c-4174-4ee9-9d6a-c74cc444a6b1.png)
+![Image of app running in terminal "Yes" option](https://user-images.githubusercontent.com/96391748/149269521-3dae3035-9581-4884-a51b-f81e4cf06e46.png)
+
+
 
 
 ---
